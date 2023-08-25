@@ -20,20 +20,15 @@ ferrari = 20000
 # Input/Proceso/Out
 try:
     dinero = float(input('Ingrese la cantidad de dinero que dispone: '))
-    if dinero < mercedez:
-        print('No se puede comprar el mercedez')
-    else:
-        print('Es posible comprar el mercedez')
 
-    if dinero < renault:
-        print('No se puede comprar el renault')
+    if dinero >= ferrari:
+        print(f'Es posible comprar todos los autos')
+    elif dinero > renault and dinero < ferrari:
+        print(f'Es posible comprar el mercedez y el renault')
+    elif dinero >= renault < mercedez:
+        print(f'Es posible comprar el renault')
     else:
-        print('Es posible comprar el renault')
-
-    if dinero < ferrari:
-        print('No se puede comprar el ferrari')
-    else:
-        print('Es posible comprar el ferrari')
+        print('No es posible comprar ningun auto.')
 
 except Exception as e:
     print(f'Error: {e}')
