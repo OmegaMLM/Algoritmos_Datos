@@ -10,9 +10,8 @@ Verde.
 #init
 color1 = None
 color2 = None
-error = True
 
-while error:
+while True:
   #input
   color1 = input('Ingrese el color Azul o Rojo: ')
   color1 = color1.lower()
@@ -26,10 +25,10 @@ while error:
       color2 = color2.lower()
       if color2 == 'azul':
         print('El color creado es el morado.')
-        error = False
+        break
       elif color2 == 'verde':
             print('El color creado es amarillo.')
-            error = False
+            break
       else:
         print('Ingreso erroneo, ingrese el color nuevamente.')
 
@@ -39,11 +38,11 @@ while error:
       color2 = color2.lower()
       if color2 == 'rojo':
         print('El color creado es el morado.')
-        error = False
+        break
 
       elif color2 == 'verde':
         print('El color creado es cyan.')
-        error = False
+        break
 
       else:
         print('Ingreso erroneo, ingrese el color nuevamente.')
