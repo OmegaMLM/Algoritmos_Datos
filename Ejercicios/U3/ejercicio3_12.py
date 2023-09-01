@@ -1,27 +1,24 @@
 '''
-Ejercicio 3.12
+Ejercicio 3.14
 El programa debe:
 
-pedir al usuario una palabra
-pedir un numero al usuario
-mostrar la palabra por pantalla la cantidad de veces que diga el numero
+pedir al usuario un número entero del 1 al 9 y muestrar por pantalla la tabla del numero (del 1 al 10).
 no debe generar errores
-'''
+'''   
 
 #init
-palabra = None
 numero = None
 contador = 0
-error = True
-#Process
-while error:    
-    try:
-      palabra = input("Ingrese una palabra: ")
-      numero = int(input("Ingrese un numero: "))
-      error = False
-      while contador < numero:
-          print(palabra)
-          contador += 1
+rango = True
 
-    except ValueError as e:
-      print(f"Error{e}. Ingrese un dato valido")
+#Process
+while rango:
+  try:
+      numero = int(input('Ingrese un numero entre el 1 al 9: '))
+      if numero >= 1 and numero <= 9:
+        rango = False
+        while contador <= 10:
+          print(f'{numero} x {contador} = {contador*numero}')
+          contador += 1
+  except Exception as error:
+    print(f'Error: {error}. No es un numero valido')
