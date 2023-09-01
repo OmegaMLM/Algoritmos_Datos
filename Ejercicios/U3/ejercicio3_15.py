@@ -10,16 +10,15 @@ no deben aparecer errores.
 #init
 palabra_clave = 'python'
 palabra = None
-correcto = True
 
 #Process
-palabra = input('Ingrese una palabra: ')
 
-while correcto:
+while True:
+  palabra = input('Ingrese una palabra: ')
+  palabra = palabra.lower()
   if palabra == palabra_clave:
       print('Correcto')
-      correcto = False
+      break
   else:
       print('Incorrecto')
-      palabra = input('Ingrese una palabra: ')
 
