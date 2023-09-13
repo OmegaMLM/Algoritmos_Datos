@@ -30,8 +30,10 @@ def comparador(palabra1, palabra2):
   
   if contador1 > contador2:
     print('La primera palabra es mas grande.')
-  else:
+  elif contador1 < contador2 :
     print('La segunda palabra es mas grande.')
+  else:
+    print('Las palabras son iguales.')
     
 
 def sacarvocales(palabra):
