@@ -1,6 +1,9 @@
 from banking import consult_balance, extract_money, insert_money
 
 def menu(ingress):
+  '''
+  Menu y llamada a funciones
+  '''
   opcion = 0
   
   if ingress:
@@ -16,7 +19,6 @@ def menu(ingress):
         opcion = int(input('Ingrese una opcion: '))
         
         if opcion == 1:
-          print('Hola')
           consult_balance()
         elif opcion == 2:
           insert_money()
