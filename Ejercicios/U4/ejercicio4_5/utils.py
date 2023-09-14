@@ -2,8 +2,6 @@ from banking import consult_balance, extract_money, insert_money
 
 def menu(ingress):
   opcion = 0
-  saldo = 50000
-  
   
   if ingress:
     while True:
@@ -18,6 +16,7 @@ def menu(ingress):
         opcion = int(input('Ingrese una opcion: '))
         
         if opcion == 1:
+          print('Hola')
           consult_balance()
         elif opcion == 2:
           insert_money()
@@ -30,10 +29,8 @@ def menu(ingress):
         else:
             print('Introduzca una opcion correcta')
             
-      except:
-        print('Error - ingrese una opcion correcta.')
+      except Exception as Error:
+        print(f'Error: {Error} ingrese una opcion correcta.')
         
   else:
     print('Autenticacion erronea')
-
-menu(True)
