@@ -15,7 +15,7 @@ def insert_money():
   global saldo
   while True:
     try:
-      saldo += int(input('Ingrese la cantidad de dinero a ingresar: '))
+      saldo += float(input('Ingrese la cantidad de dinero a ingresar: '))
       break
     except:
       print('Ingrese un numero valido.')
@@ -26,7 +26,7 @@ def extract_money():
   global saldo
   while True:
     try:
-      saldo -= int(input('Ingrese la cantidad de dinero a extraer: '))
+      saldo -= float(input('Ingrese la cantidad de dinero a extraer: '))
       break
     except:
       print('Ingrese un numero valido.')
