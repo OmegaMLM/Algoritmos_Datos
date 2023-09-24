@@ -1,26 +1,16 @@
 from utility import add_stock, consult_stock, delete_stock
 from prettytable import PrettyTable
-from PyInquirer import *
 def menu():
   while True:
     try:
-      questions = [
-        {
-          'type': 'list',
-          'name': 'opcion',
-          'message': 'Que desea hacer?',
-          'choices': [
-            '1. Ver menu de productos',
-            '2. Comprar un producto',
-            '3. Agregar stock',
-            '4. Salir'
-          ]
-        }
-      ]
-      answers = prompt(questions)
-      opcion = answers['opcion']
-      print(f"Opcion seleccionada: {opcion}")
-      
+      print("""
+            --- Inventario la Verdugod ---
+            1. Agregar stock
+            2. Consultar stock
+            3. Eliminar stock
+            4. Salir
+            """)
+      opcion = int(input('Ingrese una opcion: '))
       match opcion:
         case 1:
           add_stock()
