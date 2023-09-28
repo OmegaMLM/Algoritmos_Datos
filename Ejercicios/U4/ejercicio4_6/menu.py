@@ -3,17 +3,15 @@ from utils import *
 def menu():
   while True:
     try:
-      print('''
-            --- Opciones ---
-              1. Ver menu de productos
-              2. Comprar un producto
-                - Debito
-                - Credito 10% de recargo
-                - Efectivo 10% de rebaja
-              3. Agregar stock
-              4. Cambiar precio
-              5. Salir
-            ''')
+      table = PrettyTable()
+      table.field_names = ["Opciones", "Descripción"]
+      table.add_row(["1", "Ver informacion de productos"])
+      table.add_row(["2", "Comprar un producto"])
+      table.add_row(["3", "Add stock"])
+      table.add_row(["4", "Cambiar Precio"])
+      table.add_row(["5", "Salir"])
+      print(table)
+      
       
       opcion = int(input('Ingrese una opcion: '))
       
@@ -21,9 +19,9 @@ def menu():
         case 1:
           product_menu()
         case 2:
-          producto = product()
+          producto, stock = product()
           metodo = metod()
-          pay(metodo, producto)
+          pay(metodo, producto, stock)
         case 3:
           add_stock()
         case 4:

@@ -1,2 +1,0 @@
-: {metodo}')
-      return metodo
