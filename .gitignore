@@ -2,4 +2,4 @@ prueba.py
 Curses
 entorno_algoritmos
 .vscode/
-
+**/__pycache__/
