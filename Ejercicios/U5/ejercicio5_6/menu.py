@@ -1,5 +1,4 @@
 from utility import add_stock, consult_stock, delete_stock
-from prettytable import PrettyTable
 def menu():
   while True:
     try:

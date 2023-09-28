@@ -1,5 +1,6 @@
 from prettytable import PrettyTable
 
+
 stock_frutas = [["banana", "manzanas"],[20,40]]
 stock_verduras = [["zanahoria", "calabaza"], [15, 30]]
 
