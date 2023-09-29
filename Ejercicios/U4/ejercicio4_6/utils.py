@@ -24,7 +24,7 @@ def pedir_str(texto):
   string = input(f"{texto}: ")
   return string
 
-def product_menu():
+def product_menu():  
   table = PrettyTable()
   table.add_column('Codigo', productos[0])
   table.add_column('Nombres', productos[1])
