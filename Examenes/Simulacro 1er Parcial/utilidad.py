@@ -25,7 +25,9 @@ def pedir_float(texto):
       return numero
     except Exception as error:
       print(f"Error: {error}. Introduzca un numero valido")
-      
+
+
+#Opcion 1      
 def add_game():
   while True:
     nombre = pedir_str("Introduzca el nombre del videojuego").lower().capitalize()
@@ -51,7 +53,8 @@ def add_game():
       break
     else:
       print("Categoría no válida")
-      
+
+#Opcion 2 - Utilizacion de PrettyTable     
 def list_games():
   table = PrettyTable()
   table.add_column('Nombre', video_juegos[0])
@@ -59,6 +62,7 @@ def list_games():
   table.add_column('Categoría', video_juegos[2])
   print(table)  
 
+#Opcion 3
 def change_categoria():
     try:
       nombre = pedir_str("Introduzca el nombre del videojuego").lower().capitalize()
@@ -76,6 +80,7 @@ def change_categoria():
     except Exception as error:
       print(f"Error: {error}. Videojuego no encontrado")
 
+#Opcion 4
 def add_categoria():
   while True:
     nombre = pedir_str("Introduzca el nombre de la nueva categoría").lower().capitalize()
@@ -85,7 +90,8 @@ def add_categoria():
       categorias.append(nombre)
       print("Categoría agregada")
       break
-
+    
+#Opcion 5
 def delete_categoria():
   while True:
     nombre = pedir_str("Introduzca el nombre de la categoría a eliminar").lower().capitalize()
