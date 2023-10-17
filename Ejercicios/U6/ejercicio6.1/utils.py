@@ -5,7 +5,8 @@ class Persona:
     self.edad = edad
     self.ciudad = ciudad
     
-    
+  def description(self):
+    return f'Soy {self.nombre} {self.apellido}, tengo {self.edad} años y vivo en {self.ciudad}'
   
   def tipo_edad(self):
     if 0 <= self.edad < 14:
@@ -20,11 +21,7 @@ class Persona:
       print(f'{self.nombre} es anciano')
 
 
-def add_info(self):
-  self.nombre = input('Ingrese el nombre de la persona: ')
-  self.apellido = input('Ingrese el apellido de la persona: ')
-  self.edad = int(input('Ingrese la edad de la persona: '))
-  self.ciudad = input('Ingrese la ciudad de la persona: ')
-persona1 = Persona()
-persona1.add_info()
 
+persona1 = Persona(input('Nombre: '), input('Apellido: '), int(input('Edad: ')), input('Ciudad: '))
+print(persona1.description())
+persona1.tipo_edad()
