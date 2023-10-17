@@ -19,11 +19,11 @@ def pedir_fruta():
     
     fruta = input("¿Que fruta desea? (manzana/banana/pera/naranja): ")
     peso = int(input("¿Cuantos kg desea? "))
-    total = print(f"El total a pagar es: {verduleria['fruta'][fruta] * peso}")
+    total = print(f"El total a pagar es: {verduleria.get('fruta').get(fruta, False) * peso}")
   
   else:
     verdura = input("¿Que verdura desea? (cebolla/zanahoria/tomate/lechuga): ")
     peso = int(input("¿Cuantos kg desea? "))
-    total = print(f"El total a pagar es: {verduleria['verdura'][verdura] * peso}")
+    total = print(f"El total a pagar es: {verduleria.get('verdura').get(verdura, False) * peso}")
     
 pedir_fruta()
