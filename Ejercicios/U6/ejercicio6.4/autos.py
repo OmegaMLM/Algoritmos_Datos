@@ -14,14 +14,15 @@ Crear 3 clases que hereden de la clase padre Vehiculos, con un atributo en parti
 '''
 
 class Vehiculos:
-    def __init__(self, patente, marca, anio, origen):
+    def __init__(self, patente, marca, anio, origen, velocidad):
         self.patente = patente
         self.marca = marca
         self.anio = anio
         self.origen = origen
+        self.velocidad = velocidad
         
     def mostrar_info(self):
-      print(f'Patente: {self.patente}, Marca: {self.marca}, Año: {self.anio}, Origen: {self.origen}')
+      print(f'Patente: {self.patente}, Marca: {self.marca}, Año: {self.anio}, Origen: {self.origen}, Velocidad: {self.velocidad}')
     
     def tipos_vehiculos(self):
       print(f'Soy vehiculo de tipo: {type(self).__name__}')
@@ -39,8 +40,8 @@ class Vehiculos:
       pass
     
 class Particular(Vehiculos):
-  def __init__(self, patente, marca, anio, origen, asientos):
-    super().__init__(patente, marca, anio, origen)
+  def __init__(self, patente, marca, anio, origen, velocidad, asientos):
+    super().__init__(patente, marca, anio, origen, velocidad)
     self.asientos = asientos
   
   def acelerar(self):
@@ -56,8 +57,8 @@ class Particular(Vehiculos):
       self.velocidad = velocidad
       
 class Pickup(Vehiculos):
-  def __init__(self, patente, marca, anio, origen, carga):
-    super().__init__(patente, marca, anio, origen)
+  def __init__(self, patente, marca, anio, origen, velocidad, carga):
+    super().__init__(patente, marca, anio, origen, velocidad)
     self.carga = carga  
   def acelerar(self):
     print('Acelerando auto pickup')
@@ -72,8 +73,8 @@ class Pickup(Vehiculos):
       self.velocidad = velocidad
       
 class Deportivo(Vehiculos):
-  def __init__(self, patente, marca, anio, origen, torque):
-    super().__init__(patente, marca, anio, origen)
+  def __init__(self, patente, marca, anio, origen, velocidad, torque):
+    super().__init__(patente, marca, anio, origen, velocidad)
     self.torque = torque
   def acelerar(self):
     print('Acelerando auto deportivo')

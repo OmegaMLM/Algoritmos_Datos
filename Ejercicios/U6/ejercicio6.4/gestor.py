@@ -21,17 +21,21 @@ class GestorAutos:
     marca = pedir_str('Ingrese la marca: ').lower().capitalize()
     anio = pedir_int('Ingrese el anio: ')
     origen = pedir_str('Ingrese el origen: ').lower().capitalize()
+    velocidad = pedir_float('Ingrese la velocidad: ')
     
     match tipo_de_vehiculo.__name__:
       case 'Deportivo':
-        deportivo = Deportivo(patente, marca, anio, origen, pedir_float('Ingrese el torque: '))
+        deportivo = Deportivo(patente, marca, anio, origen, velocidad, pedir_float('Ingrese el torque: '))
         self.list_vehiculos.append(deportivo)
+        
       case 'Particular':
-        particular = Particular(patente, marca, anio, origen, pedir_int('Ingrese el asientos: '))
+        particular = Particular(patente, marca, anio, origen, velocidad, pedir_int('Ingrese el asientos: '))
         self.list_vehiculos.append(particular)
+        
       case 'Pickup':
-        pickup = Pickup(patente, marca, anio, origen, pedir_float('Ingrese la carga: '))
+        pickup = Pickup(patente, marca, anio, origen, velocidad, pedir_float('Ingrese la carga: '))
         self.list_vehiculos.append(pickup)
+        
       case _:
         print('Tipo de vehiculo no reconocido')
   def presentar_todos(self):
@@ -47,6 +51,27 @@ class GestorAutos:
               print(f'El tipo de vehiculo elegido es: {cls.__name__}')
               return cls
       print("Tipo de vehiculo no reconocido")
+      
+  def cambiar_velocidad(self):
+    patente = pedir_str("Ingrese la patente del vehiculo que desea cambiar la velocidad: ").upper()
+    for auto in self.list_vehiculos:
+      if auto.patente == patente:
+        velocidad = pedir_float("Ingrese la nueva velocidad: ")
+        auto.setear_velocidad(velocidad)
+        print(f"Velocidad cambiada a {auto.velocidad}")
+        return
+    print("Vehiculo no encontrado")
+    
+  def tiempo_de_viaje(self):
+    patente = pedir_str("Ingrese la patente del vehiculo que desea ver el tiempo de viaje: ").upper()
+    for auto in self.list_vehiculos:
+      if auto.patente == patente:
+        distancia = pedir_float("Ingrese la distancia en km: ")
+        tiempo = distancia / auto.obtener_velocidad()
+        print(f"El tiempo de viaje es de {round(tiempo, 2)} horas")
+        return
+    print("Vehiculo no encontrado")
+    
       
 def pedir_str(text):
   string = input(text)
@@ -67,19 +92,3 @@ def pedir_int(text):
       return numero
     except Exception as error:
       print(f'Error: {error}. Ingrese un dato valido')
-
-def cambiar_velocidad(self):
-  patente = pedir_str("Ingrese la patente del vehiculo que desea cambiar la velocidad: ")
-  for auto in self.list_vehiculos:
-    if auto.patente == patente:
-      velocidad = pedir_float("Ingrese la nueva velocidad: ")
-      tipo = auto.__class__.__name__
-      auto.velocidad = tipo.setear_velocidad(velocidad) 
-
-obj_gestor = GestorAutos()
-
-obj_gestor.crear_vehiculo()
-obj_gestor.crear_vehiculo()
-
-obj_gestor.presentar_todos()
-
