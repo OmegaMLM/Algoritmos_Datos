@@ -55,7 +55,7 @@ class Particular(Vehiculos):
   def setear_velocidad(self, velocidad):
       self.velocidad = velocidad
       
-class PickUp(Vehiculos):
+class Pickup(Vehiculos):
   def __init__(self, patente, marca, anio, origen, carga):
     super().__init__(patente, marca, anio, origen)
     self.carga = carga  

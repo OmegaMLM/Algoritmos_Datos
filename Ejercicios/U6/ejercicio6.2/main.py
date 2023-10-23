@@ -1,6 +1,6 @@
 from utils import *
-def main():
-  inicio()
+def menu():
+  programa()
   
 if __name__ == '__main__':
-  main()
+  menu()

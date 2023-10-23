@@ -20,8 +20,9 @@ class Persona:
     else:
       print(f'{self.nombre} es anciano')
 
-
-
-persona1 = Persona(input('Nombre: '), input('Apellido: '), int(input('Edad: ')), input('Ciudad: '))
-print(persona1.description())
-persona1.tipo_edad()
+def inicio():
+  persona1 = Persona(input('Nombre: '), input('Apellido: '), int(input('Edad: ')), input('Ciudad: '))
+  print(persona1.description())
+  persona1.tipo_edad()
+  
+  
