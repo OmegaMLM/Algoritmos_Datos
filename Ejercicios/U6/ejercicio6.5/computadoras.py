@@ -30,9 +30,10 @@ class Computadoras:
         pass
       
 class Escritorio(Computadoras):
+  
     def __init__(self, id_modelo, listaPerifericos, SO, marca, grafica):
         super().__init__(id_modelo, listaPerifericos, SO, marca)
-        self.grafica = grafica
+        self.grafica = atributoNuevo
         
     def agregar_perifericos(self, perifericos):
         self.listaPerifericos.append(perifericos)
@@ -50,3 +51,6 @@ class Notebook(Computadoras):
         
     def cambiar_so(self, nuevo_so):
         self.SO = nuevo_so
+      
+    def devolver_atributos(self):
+      print(list(Notebook.__dict__.keys()))

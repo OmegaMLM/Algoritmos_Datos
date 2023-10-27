@@ -7,6 +7,7 @@
 from computadoras import *
 
 class GestorComputadora:
+  
     def __init__(self):
         self.listcomputadoras : list[Computadoras] = []
         self.marcasDisponible = ["msi", "asus", "lenovo", "acer"]
@@ -18,12 +19,9 @@ class GestorComputadora:
         perifericos = self.validar_perifericos()
         so = self.validar_so()
         marca = self.validar_marca()
-        if cls.__name__ == 'Notebook':
-            bateria = pedir_int('Elija la cantidad de bateria de la computadora: ')
-            self.listcomputadoras.append(Notebook(id_modelo, perifericos, so, marca, bateria))
-        elif cls.__name__ == 'Escritorio':
-            grafica = pedir_str('Elija la grafica de la computadora: ')
-            self.listcomputadoras.append(Escritorio(id_modelo, perifericos, so, marca, grafica))
+        atributo = pedir_int('Introduzca el valor del atributo: ')
+        computadora = cls(id_modelo, perifericos, so, marca, atributo)
+        self.listcomputadoras.append(computadora)
     def listarComputadoras(self):
         for cls in self.listcomputadoras:
             cls.tipo_computadora()
@@ -31,15 +29,21 @@ class GestorComputadora:
             
 
     def validar_tipo(self):
+      
+      clases = {
+        'notebook': Notebook,
+        'escritorio': Escritorio
+      }
       while True:
-        for tipos in Computadoras.__subclasses__():
-          print(tipos.__name__)
-        tipo = pedir_str('Elija el tipo de computadora: ').lower().capitalize()
-        for cls in Computadoras.__subclasses__():
-            if cls.__name__ == tipo:
-                return cls
-        print("Tipo de computadora no reconocido")
+        tipo = pedir_str('Ingrese el tipo de computadora: ').lower()
+        if tipo in clases:
+          clase = clases.get(tipo)
+          print(clase)
+          return clase
+        else:
+          print('Tipo no encontrado')
         
+
     def validar_marca(self):
       while True:
         print(f"Marcas disponibles: {self.marcasDisponible}")
