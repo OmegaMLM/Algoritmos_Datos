@@ -13,10 +13,10 @@ class Encargado:
         self.legajo = legajo
         self.nombre = nombre
         self.apellido = apellido
-        self.lista_animales_a_cuidar = lista_animales_a_cuidar
+        self.lista_animales_a_cuidar : list[Animales] = []
         
 class Animales:
-    def __init__(self, nombre: str, tipo_animal: Animales, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
+    def __init__(self, nombre: str, tipo_animal, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
         self.nombre = nombre
         self.tipo_animal = tipo_animal
         self.fecha_nacimiento = fecha_nacimiento
@@ -24,15 +24,15 @@ class Animales:
         
         
 class AnimalesJaula(Animales):
-    def __init__(self, nombre: str, tipo_animal: str, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
+    def __init__(self, nombre: str, tipo_animal: Animales, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
         super().__init__(nombre, tipo_animal, fecha_nacimiento, encargado_cuidar)
         
 class AnimalesSueltos(Animales):
-    def __init__(self, nombre: str, tipo_animal: str, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
+    def __init__(self, nombre: str, tipo_animal: Animales, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
         super().__init__(nombre, tipo_animal, fecha_nacimiento, encargado_cuidar)
         
 class AnimalesAgua(Animales):
-    def __init__(self, nombre: str, tipo_animal: str, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
+    def __init__(self, nombre: str, tipo_animal: Animales, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
         super().__init__(nombre, tipo_animal, fecha_nacimiento, encargado_cuidar)
         
         
