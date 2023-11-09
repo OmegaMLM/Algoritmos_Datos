@@ -15,12 +15,25 @@ class Encargado:
         self.apellido = apellido
         self.lista_animales_a_cuidar : list[Animales] = []
         
+    def presentarse(self):
+        print(f'Legajo: {self.legajo}')
+        print(f'Nombre: {self.nombre}')
+        print(f'Apellido: {self.apellido}')
+        for animales in self.lista_animales_a_cuidar:
+            print(animales.nombre, end=' ,')
+        
 class Animales:
     def __init__(self, nombre: str, tipo_animal, fecha_nacimiento:int, encargado_cuidar: Encargado = None):
         self.nombre = nombre
         self.tipo_animal = tipo_animal
         self.fecha_nacimiento = fecha_nacimiento
         self.encargado_cuidar = encargado_cuidar
+        
+    def presentarse(self):
+      print(f'Nombre: {self.nombre}')
+      print(f'TIpo: {self.tipo_animal.__name__}')
+      print(f'Fecha de nacimiento: {self.fecha_nacimiento}')
+      print(f'Encargado: {self.encargado_cuidar.nombre}')
         
         
 class AnimalesJaula(Animales):

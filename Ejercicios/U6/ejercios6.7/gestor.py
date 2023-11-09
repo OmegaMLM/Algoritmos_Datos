@@ -87,7 +87,14 @@ class GestorZoologico:
           
         else:
           print('Animal no encontrado')
+      
+    def presentar_animales(self):
+        for animal in self.listanimales:
+          animal.presentarse()
           
+    def presentar_empleados(self):
+        for encargado in self.listencargados:
+          encargado.presentarse()
           
 def pedir_str(text):
   string = input(text)
@@ -112,9 +119,3 @@ def pedir_int(text):
         
 gestor = GestorZoologico()
 
-
-
-gestor.crear_encargado()
-gestor.crear_animal()
-gestor.asignar_animal()
-gestor.cambiar_encargado()
