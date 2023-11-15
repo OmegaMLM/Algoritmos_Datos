@@ -116,6 +116,4 @@ def pedir_int(text):
     except Exception as error:
       print(f'Error: {error}. Ingrese un dato valido')
         
-        
-gestor = GestorZoologico()
 
