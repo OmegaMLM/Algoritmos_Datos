@@ -1,0 +1,4 @@
+  Lolo - 22/12/2002 - 20:30 - Miami - Evento
+  Lele - 20/10/2022 - 9:30 - Los Angeles - EventoPersonal
+  Lulu - 13/06/2023 - 24:00 - Orlando - EventoLaboral
+  Cama - 22/12/2022 - 17:35 - Casa - EventoPersonal
