@@ -23,5 +23,5 @@ while error:
           print(palabra)
           contador += 1
 
-    except ValueError as e:
+    except Exception as e:
       print(f"Error{e}. Ingrese un dato valido")
